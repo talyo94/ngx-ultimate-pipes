@@ -8,6 +8,7 @@ const TIME_CHUNKS = [];
 })
 export class TimesincePipe implements PipeTransform {
   transform(value: Date): any {
+    console.log(value);
     const now: Date = new Date();
     const timedelta = now.getTime() - value.getTime();
     if (timedelta <= 0) {
@@ -27,7 +28,7 @@ export class TimesincePipe implements PipeTransform {
       t += `${x} days`;
     }
     if (hours) {
-      t ? t += `, ${hours} hours ` : t += `${hours} hours`;
+      t ? t += `, ${hours} hours` : t += `${hours} hours`;
     }
     if (minutes) {
       t ? t += `, ${minutes} minutes` : t += `${minutes} minutes`;
