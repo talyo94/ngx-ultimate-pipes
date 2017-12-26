@@ -25,7 +25,7 @@ export class TimeuntilPipe implements PipeTransform {
       t += `${x} days`;
     }
     if (hours) {
-      t ? t += `, ${hours} hours ` : t += `${hours} hours`;
+      t ? t += `, ${hours} hours` : t += `${hours} hours`;
     }
     if (minutes) {
       t ? t += `, ${minutes} minutes` : t += `${minutes} minutes`;

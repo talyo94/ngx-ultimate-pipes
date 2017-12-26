@@ -6,11 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class YesNoPipe implements PipeTransform {
 
   transform(value: any, args: any[] = []): any {
-    if (value) {
-      return args[0] || 'yes';
-    } else {
-      return args[2] || args [1] || 'no';
+    if (value === false) {
+      return args [1] || 'no'
     }
+    return value ? (args[0] || 'yes') : (args[2] || args [1] || 'no');
   }
 
 }
