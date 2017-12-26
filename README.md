@@ -89,7 +89,9 @@ Gets array of objects and returns new array of objects filter that includes a pa
  ```
 {{ [1, 2, 3] | join: '@' }} // '1@2@3'
 {{ ['first', 'second', 'third'] | join: '' }} // 'firstsecondthird'
- ```
+
+```
+ ### Boolean
 
 #### ReverseElementsPipe ('reverseelements')
  ```
@@ -99,26 +101,56 @@ Gets array of objects and returns new array of objects filter that includes a pa
 {{ [1, 2, 3] | join: '@' }} // [3, 2, 1]
  ```
 #### TallyPipe ('tally')
+```
+{{ array | tally }}
+```
+```
+['apple', 'banana', 'orange', 'tomato', 'apple', 'apple', 'apple', 'banana', 'orange', 'banana', 'orange', 'cucumber'] -> {{['apple', 'banana', 'orange', 'tomato', 'apple', 'apple', 'apple', 'banana', 'orange', 'banana', 'orange', 'cucumber'] | tally }}  // { "apple": 4, "banana": 3, "orange": 3, "tomato": 1, "cucumber": 1 }
+```
 
 ### Boolean
-#### YesNoPipe ('epty')
+#### YesNoPipe ('yesno')
+This will return yes no or maybe according to the values -
+If value is true, will return yes (or first arg). If false, will return no (or second arg). If value in none will return maybe (if value exists as third arg) or no (or second arg).
 
 ```
-
+{{ value | yesno }}
+{{ value | yesno: ['sure', 'nope'] }}
+{{ value | yesno: ['sure', 'nope', 'mayhaps'] }}
+```
+```
+{{ true | yesno }} -> 'yes'
+{{ false | yesno }} -> 'no'
+{{ true | yesno: ['yeah', 'nope'] }} -> 'yeah' (false will return nope)
+{{ undified | yesno }} -> 'no'
+{{ undified | yesno: ['yeah', 'nope', 'maybe'] }} -> 'maybe'
 ```
 
 
+### Time
+#### NowPipe ('now')
+Return the current date. Use built-in date pipe to format
+```
+{{ '' | now }}
+```
+#### TimesincePipe ('timesince')
+Return time since date from now (humanized).
+This will return as `x days y hours z minutes a seconds` if any is 0, it would'nt be displayed.
+```
+{{ Date | timesince }}
+```
+```
+{{ Date | timesince }} -> 11 days, 23 hours , 59 minutes, 31 seconds
+```
 
-
-
-
-
-
-
-
-
-
-
-
+#### TimeuntilPipe ('timeuntil')
+Return time until date from now (humanized).
+This will return as `x days y hours z minutes a seconds` if any is 0, it would'nt be displayed.
+```
+{{ Date | timeuntil }}
+```
+```
+{{ Date | timeuntil }} -> 26 days, 28 seconds
+```
 
 
