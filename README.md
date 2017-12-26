@@ -11,9 +11,10 @@ clone:
 
 `git clone https://github.com/talyo94/ngx-ultimate-pipes.git`
 
+In your app/core/feature module
 
-## Features
-* No dependecies
+`import { UltimatePipesModule } from 'ngx-ultimate-pipes/ultimate-pipes'`
+
 * All pipes in the same module - for "built in" filling
 
 

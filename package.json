@@ -1,8 +1,13 @@
 {
   "name": "ngx-ultimate-pipes",
   "description": "Collection of useful angular pipes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
+  "author": "talyo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talyo94/ngx-ultimate-pipes.git"
+  },
   "scripts": {
   },
   "private": false,
@@ -20,7 +25,7 @@
     "@angular/router": "^5.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
     "@angular/cli": "1.5.2",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
